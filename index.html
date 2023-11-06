@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>WordCamp Montréal 2023</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/league.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+
+    <link rel="stylesheet" href="assets/css/custom.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <p>WordCamp Montréal 2023</p>
+          <div class="grid-50">
+            <div>
+              <h3>Environnement de développement productif</h3>
+              <span>ou conseils/astuces pratique pour être productif</span>
+            </div>
+            <div>
+              <img src="./assets/images/code-typing.gif" alt="" />
+            </div>
+          </div>
+        </section>
+        <section>
+          <h3>Pour suivre en même temps</h3>
+          <p>https://ebeldev.github.io/headlesswordpress-slides/</p>
+        </section>
+        <section>
+          <p>gif de mon one line snippet</p>
+          <aside class="notes">
+            Epliquer en quoi etre productif et avoir des raccourcis clavier,
+            extension et autre trucs va aider aux develpement
+          </aside>
+        </section>
+        <section>
+          <h3>Le but pour aujourd'hui</h3>
+          <p class="fragment fade-in">- Quels outils de développement local</p>
+          <p class="fragment fade-in">
+            - Des outils et snippets pour 🚀 votre productivité
+          </p>
+        </section>
+        <section class="bio">
+          <h1>Étienne Bélanger</h1>
+          <div class="fbx fbx30 bio fz06 mb-1">
+            <div>
+              <img src="./assets/portrait2018.jpg" />
+            </div>
+            <div class="list-wrapper">
+              <ul>
+                <li>- Développeur fullstack auto-didacte</li>
+                <li>- J'utilise WordPress depuis plus de 15 ans</li>
+                <li>
+                  - Je travaille @ District Web comme team lead et comme
+                  développeur web et applicatif fullstack.
+                </li>
+                <li>
+                  - Boutiques en ligne, applications web, apis et applications
+                  native
+                </li>
+                <br />
+                <li>
+                  Contact
+                  <ul>
+                    <li>
+                      <i class="fas fa-envelope-square"></i
+                      >etienne@etiennebelanger.com
+                    </li>
+                    <li>
+                      <i class="fab fa-linkedin"></i
+                      ><a href="https://linkedin.com/in/belangeretienne"
+                        >belangeretienne</a
+                      >
+                    </li>
+                    <li>
+                      <i class="fab fa-github"></i
+                      ><a href="https://github.com/Ebeldev">@ebeldev</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section>
+          <section>
+            <h2>Pourquoi un environnement local</h2>
+            <img src="./assets/images/cowboy-coder.png" alt="" />
+            <aside class="notes">
+              - Poser la question combien de gens test leur code ou mettent du
+              code direct sur le site de production sans tester sur un autre
+              environnement ?
+            </aside>
+          </section>
+          <section>
+            <div class="r-stack">
+              <img
+                src="./assets/images/cliff-walking.jpg"
+                alt=""
+                class="fragment fade-out"
+              />
+              <img
+                src="./assets/images/cliff-safe-walking.webp"
+                alt=""
+                class="fragment"
+
+              />
+              <img
+                src="./assets/images/cliff-confidence-walking.jpg"
+                alt=""
+                class="fragment"
+                width="443"
+                height="600"
+              />
+            </div>
+          </section>
+          <section>
+            <h1>Workflow</h1>
+            <ul>
+              <li>Développement local</li>
+              <li>Stage</li>
+              <li>Production</li>
+            </ul>
+          </section>
+
+          <section>
+            <img src="./assets//images/lifecycle_environments2.gif" alt="" />
+            <p class="fragment fade-in">
+              - local: peut être bien différent de votre production
+            </p>
+            <p class="fragment fade-in">
+              - stage : sur un serveur identique à votre site en production
+            </p>
+            <p class="fragment fade-in">
+              - production : vous avez pas le droit à l'erreur
+            </p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>local dev setup</h1>
+            <p>* Attention de ne pas avoir plusieurs localhost. Ça pourrait vous causer des problèmes</p>
+          </section>
+          <section>
+            <h1>Lamp stack</h1>
+            <p>(Apache, MySql, Php stack)</p>
+            <h4>* choissez seulement 1 option</h4>
+            <ul>
+              <li>Mamp (Mac & Windows)</li>
+              <li>Wamp (Windows)</li>
+              <li>Xamp (cross-platform)</li>
+              <li>Lamp (Linux)</li>
+            </ul>
+          </section>
+          <section>
+            <h1>Natif</h1>
+            <h4>* choissez seulement 1 option</h4>
+            <h4>* si vous avez déja un LAMP ne choississez pas celle-ci</h4>
+            <p>
+              Configuration native (installer manuellement php, mysql et apache
+              ou nginx)
+            </p>
+            <p>Valet (Mac)</p>
+          </section>
+          <section>
+            <h1>Docker</h1>
+            <p>Local by flywheel (Mac, Windows, Linux)</p>
+            <p>VVV - Vagrant environnement (Mac, Windows, Linux)</p>
+            <p>Docker (Mac, Window, Linux)</p>
+            <p>Ddev (roule sous Docker) (Mac, Window, Linux)</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>Facteurs décisionnels</h1>
+          </section>
+          <section>
+            <p>Facilité d'installation et de configuration</p>
+            <p class="fragment fade-in">Facilité à mettre sur pied un site</p>
+            <p class="fragment fade-in">Consommation de ressource</p>
+            <p class="fragment fade-in">Limitation en ressource</p>
+            <p class="fragment fade-in">Isolation</p>
+            <p class="fragment fade-in">Copie d'environnement</p>
+          </section>
+          <section>
+            <h4>Pour plus de renseignements :</h4>
+            <p class="fragment fade-in">
+              https://wordpress.tv/2022/09/22/local-wordpress-development/
+            </p>
+          </section>
+        </section>
+        <section>
+          <h1>Mon choix actuel</h1>
+          <p>Ddev (runs on Docker) (Mac, Window, Linux)</p>
+          <p>
+            <a href="https://ddev.readthedocs.io"
+              >https://ddev.readthedocs.io</a
+            >
+          </p>
+          <p>Et une partie de nos équipes utilise Local by Flywheel</p>
+          <p class="fragment fade-in">- Facilité d'installation</p>
+          <pre><code>
+            # Install DDEV
+            brew install ddev/ddev/ddev
+            # cd into your wordpress project
+            cd /nom_du_projet_wordpress
+            # configure ddev
+            ddev config
+          </code></pre>
+          <p class="fragment fade-in">- Facilité de partir un projet</p>
+          <pre><code>
+            # Partir un environnement de ton projet
+            ddev start nomduprojet
+          </code></pre>
+          <p class="fragment fade-in">
+            - Peu rouler plusieurs projets en même temps
+          </p>
+          <p class="fragment fade-in">- WP CLI est installé par défaut</p>
+          <p class="fragment fade-in">
+            - Peu rouler plusieurs types de projets en php (Drupal, Laravel)
+          </p>
+          <p class="fragment fade-in">
+            - phpmyadmin
+            <pre><code>
+            ddev phpmyadmin
+          </code></pre>
+          </p>
+          <p class="fragment fade-in">
+            - mailhog
+            <pre><code>
+            ddev launch -m
+          </code></pre>
+          </p>
+        </section>
+
+        <section>
+          <h1>Trucs et astuces</h1>
+          <img src="./assets/images/wise.gif" alt="" />
+        </section>
+
+        <section>
+          <section>
+            <h1>Debugging</h1>
+          </section>
+          <section>
+            <h1>var dump</h1>
+            <div class="fragment fade-in">
+              <p>Sortie dans l'écran</p>
+              <p>image dun var dump</p>
+            </div>
+            <div class="fragment fade-in">
+              <p>Sortie dans le fichier debug.log</p>
+              <p>image dun var dump</p>
+            </div>
+          </section>
+          <section>
+            <h2>Pour les sorties à l'écran</h2>
+            <div class="fragment fade-in">Var dump standard</div>
+            <div class="fragment fade-in">
+              <p>Vardumper de Symfony</p>
+              <img src="./assets/images/vardumper.png" alt="" />
+            </div>
+            <div class="fragment fade-in">
+              personnellement je n'utilise pas la sortie à l'écran
+            </div>
+          </section>
+
+          <section>
+            <p>En dev local et en stage</p>
+            <h3>activer toujours vos debug</h3>
+            <div class="grid-50">
+              <div>
+                <img src="./assets/images/activate-debug.gif" alt="" />
+                <p class="fragment fade-in">
+                  Quand le debug est actif tout sortira dans le fichier
+                  debug.log situé dans le wp-content et pas a l'écran
+                </p>
+              </div>
+
+              <div>
+                <img
+                  class="fragment fade-in"
+                  src="./assets/images/wise.gif"
+                  alt=""
+                />
+              </div>
+            </div>
+          </section>
+          <section class="full">
+            <div class="grid-50">
+              <div>
+                <pre>
+                  <code data-line-numbers="4-17">
+{
+  ...,
+  "WordPress Debug mode": {
+    "prefix": "wpdebug",
+    "body": [
+      "// Enable WP_DEBUG mode",
+      "define( 'WP_DEBUG', true );",
+      "define( 'WP_DEBUG_LOG', true );",
+      "define( 'WP_DEBUG_DISPLAY', false );",
+      "@ini_set( 'display_errors', 0 );",
+      "define( 'SCRIPT_DEBUG', true );"
+    ]
+  },
+}
+                  </code>
+                </pre>
+              </div>
+              <div>
+                <img src="./assets/images/wpdebug.gif" alt="" />
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>Debug en production</h1>
+            <h2>ATTENTION !!</h2>
+          </section>
+          <section>
+            <p>C'est possible si !</p>
+            <h3 class="fragment fade-in">Vous avez activé vos debug</h3>
+          </section>
+          <section>
+            <img
+              class="fragment fade-in"
+              src="./assets/images/wise.gif"
+              alt=""
+            />
+          </section>
+            <section>
+
+              <h2>query monitor</h2>
+              <p>Extension WordPress pour le debugging</p>
+              <img src="./assets/images/query-monitor.png" alt="">
+              <div class="r-stack">
+                <p class="fragment fade-up fade-in-out">Requêtes à la base de donnée</p>
+                <p class="fragment fade-up">Erreurs php</p>
+                <p class="fragment fade-up">Appels HTTP api</p>
+                <p class="fragment fade-up">Scripts et styles</p>
+                <p class="fragment fade-up">Fichier de template de thème</p>
+                <p class="fragment fade-up">Block editor blocks</p>
+                <p class="fragment">Et bien plus.. </p>
+              </div>
+            </section>
+        </section>
+        <section>
+          <h1>Snippets et alias</h1>
+          <h4>Augmenter votre efficacité du bout de vos doigts!</h4>
+          <p class="fragment fade-in">VS Code snippets</p>
+          <p class="fragment fade-in">VS Code extensions</p>
+          <p class="fragment fade-in">Shell alias</p>
+        </section>
+        <section>
+          <section>
+            <h1>Snippets VSCode</h1>
+          </section>
+          <section>
+            <h4>phpt</h4>
+            <div class="grid-50">
+              <div>
+                <p>vscode snippet</p>
+                <pre>
+                  <code data-line-numbers="4-10">
+{
+  ...,
+  "PHPTAGS": {
+    "prefix": "phpt",
+    "body": [
+      "<?php $0 ?>"
+    ],
+    "description": "Open and close php tags"
+  },
+}
+                  </code>
+                </pre>
+              </div>
+              <div>
+                <p>executing vscode snippet</p>
+                <img src="./assets/images/phpt.gif" alt="" />
+              </div>
+            </div>
+          </section>
+          <section>
+            <h4>pdnt</h4>
+            <div class="grid-50">
+              <div>
+                <p>vscode snippet</p>
+                <pre>
+                  <code data-line-numbers="4-10">
+{
+  ...,
+  "PHPDUMPNOTAGS": {
+    "prefix": "pdnt",
+    "body": [
+      "echo'<pre style=\"margin-left: 300px;\">';",
+      "var_dump($0);",
+      "echo '</pre>';"
+    ],
+    "description": "echo pre tag and var dump"
+  },
+}
+                  </code>
+                </pre>
+              </div>
+              <div>
+                <p>executing vscode snippet</p>
+                <img src="./assets/images/pdnt.gif" alt="" />
+              </div>
+            </div>
+          </section>
+          <section>
+            <h4>debuglog</h4>
+            <div class="grid-50">
+              <div>
+                <p>vscode snippet</p>
+                <pre>
+                  <code data-line-numbers="4-10">
+{
+  ...,
+  "Error log advanced": {
+    "prefix": "debuglog2",
+    "body": [
+      "ob_start();",
+      "var_dump(${1});",
+      "var_dump(${2});",
+      "$$content = ob_get_contents();",
+      "ob_end_clean();",
+      "error_log($$content);"
+    ]
+  },
+}
+                  </code>
+                </pre>
+              </div>
+              <div>
+                <p>executing vscode snippet</p>
+                <img src="./assets/images/debuglog.gif" alt="" />
+              </div>
+            </div>
+          </section>
+<section>
+  resultat du debug log
+</section>
+        </section>
+
+        <section>
+          vs code wordpress snippets vs code wordpress acf snippets
+        </section>
+
+        <section>
+          <section>
+            <h3>Migrate WordPress easily</h3>
+
+            <ul>
+              <li>WP CLI with All in one Migration Extended</li>
+              <li>WP CLI</li>
+            </ul>
+          </section>
+          <section>
+            <h4>All In One Migration</h4>
+            <div class="grid-50">
+              <p>image du gui</p>
+              <div>
+                <ul>
+                  <li>Partir une sauvegarde : wp ai1wm backup</li>
+                  <li>Restaurer une sauvegarde : wp ai1wm restore nom_du_fichier</li>
+                </ul>
+                <p>* note: Le plugin crée un dossier ai1wm-backup dans le wp-content et votre archive doit si retrouver</p>
+                <a href="https://help.servmask.com/knowledgebase/cli-integration/">Aide-mémoire</a>
+              </div>
+            </div>
+          </section>
+          <section>
+            <h4>Utiliser WP CLI</h4>
+            <a href="https://wpshout.com/quick-guides/migrate-wordpress-wp-cli-rsync/">Migrer un site</a>
+            <a href="https://rocketgeek.com/basics/using-wp-cli-to-migrate-copy-your-site/">Migrer un site</a>
+          </section>
+        </section>
+
+        <section>
+          <h1>hot reloading</h1>
+        </section>
+
+
+        <section>
+          code pen isolate problems build wordpress just to test native stuff or
+          plugins only
+        </section>
+        <section>zsh alias</section>
+        <section>nrd</section>
+        <section>alias ddevpadmin="ddev phpmyadmin"</section>
+        <section>makewpddev</section>
+        <section>makewcddev</section>
+        <section>alias sites="cd ~/ddev-projects"</section>
+        <section>alias clientx="cd ~/ddev-projects/client</section>
+        <section>debug scss @warn "postion == #{$position}";</section>
+        <section>
+          <section>
+            <h2>Apprendre à bouger votre cursor rapidement</h2>
+            <p>avec votre clavier</p>
+          </section>
+
+          <section>
+            <h4>Déplacer votre cursor au début ou à la fin d'une ligne</h4>
+            <p>cmd + &#8592; ou &#8594;</p>
+            <img src="./assets/images/cursor-move-endline.gif" alt="">
+          </section>
+          <section>
+            <h4>Déplacer votre cursor au début de chaque mot de la ligne</h4>
+            <p>option + &#8592; ou &#8594;</p>
+            <img src="./assets/images/cursor-option.gif" alt="">
+          </section>
+          <section>
+            <h4>Sélectionner une ou plusieurs lettres</h4>
+            <p>shift + &#8592; ou &#8594;</p>
+            <img src="./assets/images/cursor-select.gif" alt="">
+          </section>
+          <section>
+            <h4>Sélectionner un mot au complet dans une ligne</h4>
+            <p>shit + option + &#8592; ou &#8594;</p>
+            <img src="./assets/images/cursor-select-word.gif" alt="">
+          </section>
+
+          <section>
+            <h4>Déplacer une ligne ou un bloc</h4>
+            <p>option + &#8593; ou &#8595;</p>
+            <div class="grid-50">
+              <img src="./assets/images/cursor-move-up.gif" alt="">
+              <img src="./assets/images/cursor-move-block.gif" alt="">
+            </div>
+          </section>
+
+          <section>
+            <h4>Copier une ligne</h4>
+            <p>shift + option + &#8593; ou &#8595;</p>
+            <img src="./assets/images/cursor-copy-line.gif" alt="">
+          </section>
+
+          <section>
+            <h4>Et quand vous combiner le tout</h4>
+            <img src="./assets/images/cursor-combine.gif" alt="">
+          </section>
+
+          <section>
+            <h4>Sélection multiple</h4>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Emmet</h2>
+            <p>Extension d'abréviations et de snippet</p>
+            <img src="./assets/images/emmet.gif" alt="">
+          </section>
+          <section>
+            <img src="./assets/images/emmet-html.gif" alt="">
+          </section>
+          <section>
+            emmet + tab
+          </section>
+
+          <section class="links-white">
+            <h4>liens utiles:</h4>
+            <ul>
+              <li><a href="https://www.youtube.com/results?search_query=emmet+course">Cours gratuits sur Youtube</a></li>
+              <li><a href="https://docs.emmet.io/cheat-sheet/">Aide-mémoire officiel pour Emmet</a></li>
+              <li><a href="https://www.freecodecamp.org/news/write-html-css-faster-with-emmet-cheat-codes/">Aide-mémoire Emmet avec explications</a></li>
+            </ul>
+          </section>
+        </section>
+        <section>https://www.toptal.com/designers/htmlarrows/symbols/</section>
+        <section>
+					<p class="fragment fade-in-then-semi-out">See the slides</p>
+					<p class="fragment fade-in">https://ebeldev.github.io/headlesswordpress-slides/</p>
+				</section>
+        <section>
+          <div class="r-stack">
+            <img class="fragment fade-out" data-fragment-index="0" src="./assets/images/agility.gif" alt="">
+            <img class="fragment" src="./assets/images/victory.gif" alt="">
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        width: 1140,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
