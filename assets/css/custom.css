@@ -76,6 +76,11 @@ code {
   align-items: center;
 }
 
+.v-center {
+  justify-content: center;
+  flex-direction: column;
+}
+
 .fbxstart {
   align-items: start;
 }
@@ -131,7 +136,8 @@ code {
 }
 
 .fbx.bio img {
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  /* clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); */
+  clip-path: ellipse(50% 55% at 50% 55%);
 }
 
 .list-wrapper {
