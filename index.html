@@ -52,7 +52,25 @@
 
         <!-- Section :: GIF one linear ddev makewp -->
         <section>
-          <p>gif de mon one line snippet</p>
+          <h3>Script génial</h3>
+          <div class="grid-50">
+            <div>
+              <p class="fragment fade-in">Installer WordPress une ligne de commande. </p>
+              <p class="fragment fade-in">Configurer votre admin user </p>
+              <p class="fragment fade-in">Configurer votre langue </p>
+              <p class="fragment fade-in">Configurer votre timezone </p>
+              <p class="fragment fade-in">Télécharger et activer des extensions </p>
+              <p class="fragment fade-in">Créer un certains nombre de posts </p>
+              <p class="fragment fade-in">Créer un dummy user </p>
+              <p class="fragment fade-in">Ouvrir votre logiciel d'édition de code</p>
+              <p class="fragment fade-in">Ouvrir votre navigateur sur le wp-admin</p>
+              <p class="fragment fade-in">Et tellement plus </p>
+            </div>
+            <div>
+
+              <img class="fragment fade-in" src="./assets/images/wordpress-fast-install.gif" alt="">
+            </div>
+          </div>
           <aside class="notes">
             Epliquer en quoi etre productif et avoir des raccourcis clavier,
             extension et autre trucs va aider aux develpement
@@ -466,7 +484,18 @@
           </section>
 
           <section>
-            <h3>La touche 'tab' c'est votre alier ! === 🚀🚀🚀</h3>
+            <h3>La touche 'tab' c'est votre allié ! === 🚀🚀🚀</h3>
+            <div class="grid-50">
+              <div class="fragment fade-in">
+                <p>Dans votre shell (zsh auto-completion, auto-suggestion)</p>
+                <img src="./assets/images/zsh-autocompletion.gif" alt="">
+              </div>
+              <div>
+                <p class="fragment fade-in">To start a snippet</p>
+                <p class="fragment fade-in">Emmet</p>
+                <p class="fragment fade-in">And many more, try it !</p>
+              </div>
+            </div>
           </section>
 
           <section>
@@ -861,6 +890,7 @@ wp search-replace http://anciennomdedomaine.com http://nouveaunomdedomaine.com
           <section>
             <p>Hot reloading, hot module reload (HMR), Browsersync</p>
             <img src="./assets/images/browsersync.gif" alt="">
+            <p>Travailler à plusieurs écrans</p>
           </section>
           <section>
             <div class="">vscode  cmd + p == cherche fichier plus vite</div>
@@ -870,10 +900,91 @@ wp search-replace http://anciennomdedomaine.com http://nouveaunomdedomaine.com
         <!-- Fin Section :: Trucs et astuces divers -->
 
         <!-- Section :: FINAL MAKEWP -->
-        <section>
-          <section>makewpddev</section>
-          <section>makewcddev</section>
+        <section class="fz08 no-margin fw">
+          <section>
+            <h1>Finalement</h1>
+            <p class="fragment fade-in">Voici mon script qui me permets mon saint gral d'installation WordPress</p>
+          </section>
+          <section>
+            <ul>
+              <li class="fragment fade-in">Installer ou mettre à jour WordPress</li>
+              <li class="fragment fade-in">Configurer votre site</li>
+              <li class="fragment fade-in">Télécharger et mettre à jour vos extensions</li>
+              <li class="fragment fade-in">Faire un archive de votre site</li>
+              <li class="fragment fade-in">Re sauvegarder vos permaliens</li>
+              <li class="fragment fade-in">Search and replace</li>
+              <li class="fragment fade-in">Pour plus d'informations <a href="https://wp-cli.org/fr/">wp-cli.org/fr/</a></li>
+            </ul>
+          </section>
+          <section>
+            <div class="grid-50">
+              <div>
+                <pre>
+                <code>
+function makewpddev() {
+  mkdir $1 && cd $1 && code . &&
+  wp core download &&
+  ddev config --project-type=wordpress &&
+  ddev get ddev/ddev-phpmyadmin &&
+  ddev start &&
+  ddevwpinstall &&
+  startwpddev &&
+  ddevwpdummycontent &&
+  openBrowser $1 &&
+  openBrowserAdmin $1
+}
+
+function ddevwpinstall() {
+    ddev wp core install --url=$1.ddev.site
+    --title=$1
+    --admin_user=districtweb
+    --admin_password=admin
+    --admin_email=test@test.com &&
+    ddev wp language core install fr_CA &&
+    ddev wp option update WPLANG "fr_CA" &&
+    ddev wp option update timezone_string
+    "America/Toronto"
+}
+             </code>
+              </pre>
+              </div>
+              <div>
+                <pre>
+                <code>
+function startwpddev() {
+  ddev wp plugin delete --all &&
+  ddev wp plugin install all-in-one-wp-migration
+  --activate &&
+  ddev wp plugin install query-monitor
+  --activate
+}
+
+function ddevwpdummycontent() {
+  ddev wp user create fakeeditor
+  dev+fakeeditor@groupejcl.ca --role=editor &&
+  curl -N http://loripsum.net/api/5 |
+  ddev wp post generate --count=10
+  --post_content
+  --post_title="CLI Post Title"
+  --post_author=fakeeditor
+}
+
+function openBrowser() {
+  open -a firefox -g
+  "https://$1.ddev.site"
+}
+
+function openBrowserAdmin() {
+  open -a firefox -g
+  "https://$1.ddev.site/wp-admin"
+}
+                </code>
+              </pre>
+              </div>
+            </div>
+          </section>
         </section>
+        <!-- Fin Section :: FINAL MAKEWP -->
 
         <section>
 					<p>See the slides</p>
@@ -882,8 +993,8 @@ wp search-replace http://anciennomdedomaine.com http://nouveaunomdedomaine.com
         <section>
           <h3>Devenez un ninja!</h3>
           <div class="r-stack">
-            <img class="fragment fade-out" data-fragment-index="0" src="./assets/images/agility.gif" alt="">
-            <img class="fragment" src="./assets/images/victory.gif" alt="">
+            <img class="fragment fade-in" data-fragment-index="0" src="./assets/images/agility.gif" alt="">
+            <img class="fragment fade-in" src="./assets/images/accelere.gif" alt="">
           </div>
         </section>
       </div>
